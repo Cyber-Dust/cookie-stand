@@ -10,7 +10,7 @@ function Locations(name, min, max, hours){
     this.min = min;
     this.max = max;
     
-    //this.avgSold = avgSold;
+ 
     
     this.hours = hours;
     
