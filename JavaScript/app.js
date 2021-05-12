@@ -1,16 +1,21 @@
 'use strict'
+
  let hours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: ',"Daily Location Total: "];
 
  let objectNumber = 0;
 
+
 function randomCookie(min, max) {
   return Math.floor(Math.random() * (max - min) + min);  
 }
+
 function Locations(name, min, max, avg) {
+
 
     this.name = name;
     this.min = min;
     this.max = max;
+
     this.avg = avg;
     this.hours = hours;
     objectNumber++;
@@ -26,6 +31,7 @@ function Locations(name, min, max, avg) {
 
   for(let i=0; i<hours.length-1 ;i++){
     currentCount = Math.floor(randomCookie(this.min,this.max) * this.avg); 
+
     this.arrayCookie.push(`${hours[i]} ${currentCount} cookies`);
 
     total += currentCount;
@@ -34,6 +40,7 @@ function Locations(name, min, max, avg) {
     
  }
     this.arrayCookie.push(`Total: ${total} cookies`);
+
     this.numCookie.push(total);
 
  return this.arrayCookie;
@@ -47,6 +54,7 @@ let Dubai = new Locations("Dubai",11,38,2.3);
 let Paris = new Locations("Paris",20,38,2.3);
 
 let Lima = new Locations("Lima",2,16,4.6);
+
 
 let objectsArray = [Seattle, Tokyo, Dubai,  Paris, Lima];
 
@@ -73,6 +81,7 @@ function makeCookieUl(Locations){
 }
 
 // MAKE A TABLE DISPLAY
+
 
 
 
