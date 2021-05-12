@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 201
 
 ## Cookie Stand Project
@@ -5,6 +6,16 @@
 I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
 
 ### Author: Dasean Volk
+=======
+
+# LAB 06
+
+## Cookie-Stand
+
+I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
+
+### Author: Student/Group Name
+>>>>>>> b944ad50443c20394c9b6198952594d3a8d2d815
 
 ### Links and Resources
 * [submission PR](http://xyz.com)
