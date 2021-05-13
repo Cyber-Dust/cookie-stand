@@ -3,20 +3,12 @@
  let hours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: ',"Daily Location Total: "];
 
  let objectNumber = 0;
-<<<<<<< HEAD
-
-=======
->>>>>>> 66a22d38ec189c8aadf7832ae9a8a5ab68f367ea
 
 function randomCookie(min, max) {
   return Math.floor(Math.random() * (max - min) + min);  
 }
 
 function Locations(name, min, max, avg) {
-<<<<<<< HEAD
-
-=======
->>>>>>> 66a22d38ec189c8aadf7832ae9a8a5ab68f367ea
 
     this.name = name;
     this.min = min;
@@ -52,10 +44,6 @@ function Locations(name, min, max, avg) {
  return this.arrayCookie;
 }
 let Seattle = new Locations("Seattle", 23, 65, 6.3);
-<<<<<<< HEAD
-=======
-
->>>>>>> 66a22d38ec189c8aadf7832ae9a8a5ab68f367ea
 
 let Tokyo = new Locations("Tokyo", 3, 24,1.2);
 
@@ -94,10 +82,6 @@ function makeCookieUl(Locations){
 
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 66a22d38ec189c8aadf7832ae9a8a5ab68f367ea
 
 function makeCookieH2(Locations){
 
@@ -114,10 +98,6 @@ function makeCookieH2(Locations){
   createArticle.appendChild(h2);
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 66a22d38ec189c8aadf7832ae9a8a5ab68f367ea
 // function makeCookieLi(Locations){
 //   let store = Locations.name;
 //    const article = document.getElementById(store);
@@ -234,7 +214,3 @@ tableFooter();
 // makeCookieLi(Paris)
 // makeCookieH2(Lima)
 // makeCookieLi(Lima)
-<<<<<<< HEAD
-=======
-
->>>>>>> 66a22d38ec189c8aadf7832ae9a8a5ab68f367ea
