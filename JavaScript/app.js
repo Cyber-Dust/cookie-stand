@@ -1,140 +1,67 @@
 'use strict'
+// --------------------------- Global Variables ---------------------------//
 
- let hours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: ',"Daily Location Total: "];
+let hours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: ',"Daily Location Total: "];
 
  let objectNumber = 0;
 
-function randomCookie(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);  
-}
+// --------------------------- Constructor Functions ---------------------------//
 
 function Locations(name, min, max, avg) {
 
-    this.name = name;
-    this.min = min;
-    this.max = max;
+  this.name = name;
+  this.min = min;
+  this.max = max;
+  this.avg = avg;
+  this.hours = hours;
+  objectNumber++;
+  }
 
-    this.avg = avg;
-    this.hours = hours;
-    objectNumber++;
-    }
+// --------------------------- Prototype Methods ---------------------------//
 
- Locations.prototype.getCookiesEachHour = function(){
 
-   this.arrayCookie = [];
-   this.numCookie = [];
+Locations.prototype.getCookiesEachHour = function(){
 
-   let total = 0;
-   let currentCount = 0;
+  this.arrayCookie = [];
+  this.numCookie = [];
 
-  for(let i=0; i<hours.length-1 ;i++){
-    currentCount = Math.floor(randomCookie(this.min,this.max) * this.avg); 
+  let total = 0;
+  let currentCount = 0;
 
-    this.arrayCookie.push(`${hours[i]} ${currentCount} cookies`);
+ for(let i=0; i<hours.length-1 ;i++){
+   currentCount = Math.floor(randomCookie(this.min,this.max) * this.avg); 
 
-    total += currentCount;
-    console.log(total);
+   this.arrayCookie.push(` ${currentCount} cookies`);
+   this.numCookie.push(currentCount);
 
-    
- }
-    this.arrayCookie.push(`Total: ${total} cookies`);
 
-    this.numCookie.push(total);
+   total += currentCount;
+   console.log(total);
 
- return this.arrayCookie;
+
+   
 }
-let Seattle = new Locations("Seattle", 23, 65, 6.3);
+   this.arrayCookie.push(`Total: ${total} cookies`);
 
-let Tokyo = new Locations("Tokyo", 3, 24,1.2);
+   this.numCookie.push(total);
 
-let Dubai = new Locations("Dubai",11,38,2.3);
-
-let Paris = new Locations("Paris",20,38,2.3);
-
-let Lima = new Locations("Lima",2,16,4.6);
-
-
-let objectsArray = [Seattle, Tokyo, Dubai,  Paris, Lima];
-
-Seattle.getCookiesEachHour();
-Tokyo.getCookiesEachHour();
-Dubai.getCookiesEachHour();
-Paris.getCookiesEachHour();
-Lima.getCookiesEachHour();
-
-
-
-function makeCookieDiv(Locations){
-  
-  const div = document.getElementById('div');
-
-  const createArticle = document.createElement('article');
-    let store = Locations.name;
-  createArticle.setAttribute("id", store);
-
-  div.appendChild(createArticle);
-  const h2 = document.createElement('h2');
-  h2.textContent = Locations.name;
-  createArticle.appendChild(h2);
+return this.arrayCookie;
 }
 
-// MAKE A TABLE DISPLAY
+// --------------------------- Regular Functions ---------------------------//
 
-
-
-
-function makeCookieH2(Locations){
-
-  const div = document.getElementById('div');
-
-  const createArticle = document.createElement('article');
-  let store = Locations.name;
-  createArticle.setAttribute("id", store);
-
-
-  div.appendChild(createArticle);
-  const h2 = document.createElement('h2');
-  h2.textContent = Locations.name;
-  createArticle.appendChild(h2);
-}
-
-// function makeCookieLi(Locations){
-//   let store = Locations.name;
-//    const article = document.getElementById(store);
-//   const ul = document.createElement("ul")
-//   article.appendChild(ul);
-//   for(let i = 0; i < Locations.arrayCookie.length; i++){
-//     const li = document.createElement('li');
-//     li.textContent = Locations.arrayCookie[i];
-//     ul.appendChild(li);
-//   }
-
-// }
-
-// TABLE FUNCTION EXAMPLE
-// function addTable(Locations) {
-//   let name = location.name;
-//   const articleElem = document.getElementById(name);
-
-//   const tableElem = document.createElement('table');
-//   articleElem.appendChild(tableElem);
-
-//   const trElem = document.createElement('tr');
-//   tableElem.appendChild(trElem);
-
-//   const tr2Elem = document.createElement('tr');
-//   tableElem.appendChild(tr2Elem);
-
-//   let th1Elem = document.createElement('th');
-//   th1Elem.
-// }
+function randomCookie(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);  
+} 
 
 function tableHeader(){
   const table = document.getElementById('table');
   const th1 = document.createElement('th');
   const tr = document.createElement('tr');
   table.appendChild(tr);
-  th1.textContent = "locations "
+
+  th1.textContent = " "
+
   tr.appendChild(th1);
   for (let i = 0; i < hours.length; i++){
     const th = document.createElement("th");
@@ -146,12 +73,12 @@ function tableHeader(){
 function tableBody(locations){
  const body = document.getElementById("table");
 
-  const tr = document.getElementById("tr");
+  const tr = document.createElement("tr");
   body.appendChild(tr);
   const nameTd = document.createElement('td');
   nameTd.textContent = locations.name;
   tr.appendChild(nameTd);
-  for (let j=0; j < locations.arrayCookie.length; j++ ){
+  for(let j = 0; j < locations.arrayCookie.length; j++ ){
 
     const td = document.createElement("td");
     td.textContent = locations.arrayCookie[j];
@@ -163,13 +90,15 @@ function tableBody(locations){
 
 function tableFooter(){
   const footer = document.getElementById("table");
-  const tr = document.getElementById("tr");
-   footer.appendChild(tr);
-   const nameTd = document.createElement('td');
-   nameTd.textContent = "Totals";
-   footer.appendChild(nameTd);
-   let totalFooter = 0;
-   for (let j=0; j < hours.length-1; j++ ){
+
+  const tr = document.createElement("tr");
+  footer.appendChild(tr);
+  const nameTd = document.createElement('td');
+  nameTd.textContent = "Totals";
+  footer.appendChild(nameTd);
+  let totalFooter = 0;
+  for (let j=0; j < hours.length-1; j++ ){
+
 
     const createTd = document.createElement('td');
 
@@ -184,7 +113,7 @@ function tableFooter(){
   }
 
   const totalTd = document.createElement('td')
-  for(let k=o; k < objectsNumber; k++){
+  for(let k=0; k < objectNumber; k++){
     totalFooter += objectsArray[k].numCookie[objectsArray[k].numCookie.length-1];
   }
   totalTd.textContent = (totalFooter);
@@ -193,7 +122,33 @@ function tableFooter(){
 }
 
 
+// --------------------------- All Listeners ---------------------------//
 
+
+// --------------------------- Object Instances ---------------------------//
+
+let seattle = new Locations("Seattle", 23, 65, 6.3);
+
+let Tokyo = new Locations("Tokyo", 3, 24,1.2);
+
+let Dubai = new Locations("Dubai",11,38,2.3);
+
+let Paris = new Locations("Paris",20,38,2.3);
+
+let Lima = new Locations("Lima",2,16,4.6);
+
+//
+
+let objectsArray = [seattle, Tokyo, Dubai,  Paris, Lima];
+
+seattle.getCookiesEachHour();
+Tokyo.getCookiesEachHour();
+Dubai.getCookiesEachHour();
+Paris.getCookiesEachHour();
+Lima.getCookiesEachHour();
+
+
+// --------------------------- Call the function that put data on the page ---------------------------//
 
 tableHeader();
 tableBody(objectsArray[0]);
@@ -203,14 +158,3 @@ tableBody(objectsArray[3]);
 tableBody(objectsArray[4]);
 tableFooter();
 
-
-// makeCookieH2(seattle)
-// makeCookieLi(seattle)
-// makeCookieH2(Tokyo)
-// makeCookieLi(Tokyo)
-// makeCookieH2(Dubai)
-// makeCookieLi(Dubai)
-// makeCookieH2(Paris)
-// makeCookieLi(Paris)
-// makeCookieH2(Lima)
-// makeCookieLi(Lima)
