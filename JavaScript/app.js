@@ -1,7 +1,7 @@
 'use strict'
 // --------------------------- Global Variables ---------------------------//
 
-let hours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: ',"Daily Location Total: "];
+let hours = ['6:00AM: ','7:00AM: ','8:00AM: ','9:00AM: ','10:00AM: ','11:00AM: ','12:00PM: ','1:00PM: ','2:00PM: ','3:00PM: ','4:00PM: ','5:00PM: ','6:00PM: ','7:00PM: ',"Daily Location Total: "];
 
 let objectNumber = 0;
 
@@ -90,6 +90,7 @@ formElem.addEventListener('submit', handleSubmit);
 function randomCookie(min, max) {
   return Math.floor(Math.random() * (max - min) + min);  
 } 
+
 
 function tableHeader(){
   const table = document.getElementById('table');
@@ -195,4 +196,6 @@ tableBody(objectsArray[2]);
 tableBody(objectsArray[3]);
 tableBody(objectsArray[4]);
 tableFooter();
+
+// ---------------------------RUN ALL FUNCTIONS ---------------------------//
 
