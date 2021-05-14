@@ -1,6 +1,124 @@
+/* INDEX.HTML */
+body {
+  background-color: mediumslateblue;
+}
+main {
+  background-color: rgb(34, 28, 66);
+  width: 996px;
+  margin-left: 208px;
+}
+
+header {
+  position: sticky;
+}
+
+header section {
+  display: flex;
+  margin-left: 208px;
+  align-items: center;
+  background-color: cadetblue;
+  /* border: solid blue 5px; */
+  width: 996px;
+}
+
+section:nth-child(1) {
+  border: solid 5px black;
+}
+
+section:nth-child(2){
+  border: solid 5px black;
+}
+
+section:nth-child(3){
+  border: solid 5px black;
+}
+
+section:nth-child(4){
+  border: solid 5px black;
+}
+
+
+footer {
+  border: solid 5px black;
+  background-color: mediumturquoise;
+  width: 966px;
+}
+
+.fish {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center; 
+  justify-content: space-evenly;
+  margin: 10px 10px 10px 208px;
+  padding: 10px 10px 10px 10px;
+  width: 966px;
+  border: solid 3px black;
+}
+
+li h3 {
+  font-size: 1.3em;
+}
+
+#locations {
+  border: solid 3px black;
+}
+
+#Times {
+ display: flex;
+ justify-content: center;
+ border: solid 3px black;
+} 
+
+#contact {
+  display: flex;
+  align-content: center;
+  border: solid 3px black;
+}
+
+
+
+
+
+
+
+
+
+/* SALES.HTML */
+
+/* #salesbody {
+ display: flex;
+ justify-content: center;
+} */
+
 th {
   border: solid 5px rgb(58, 8, 58);
   margin: 20px;
   padding: 20px;
-  background-color: magenta
+  background-color: magenta;
+}
+
+tr {
+ background-color: burlywood;
+}
+
+table {
+  margin-top: 5px;
+  background-color: blanchedalmond;
+  margin: 10px 100px 100px 100px;
+}
+
+table * {
+  border: 2px solid black;
+  padding: 2px;
+  text-align: center;
+}
+
+form {
+  margin-top: 100px;
+  text-align: center;
+}
+
+legend h3 {
+  font-size: 1.3em;
 }

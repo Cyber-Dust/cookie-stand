@@ -6,13 +6,60 @@
   <link rel="stylesheet" href="reset.css" type="text/css">
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
-<body>
-  <table id = "table"></table>
-  <div id="div"></div>
+<body id="salesbody">
+ <form>
+   <fieldset>
+     <legend><h3>Salmon Cookies</h3></legend>
+     <label for="name">Name of City:</label>
+     <input type="text" name="name" required><br>
+     <label>Minimum Number of Customers
+       <input type="number" name="min" required>
+     </label><br>
+     <label>Maximum Number of Customers
+       <input type="number" name="max" required>
+     </label><br>
+     <label>Average Cookies per Customer
+       <input type="number" name="avg" required>
+     </label><br>
+   </fieldset><br>
+   <button type="submit">Submit</button>
+ </form>
+ <table id = "table">
+
+ </table>
+ <div id="div">
+
+ </div>
 
 
   <script src="JavaScript/app.js"></script>
-  
+<footer class="fish">
+    <div id="locations">
+        
+      <ul>
+       <li><h3>Locations</h3></li>
+       <li>Seattle, USA</li>
+       <li>Dubai, United Arab Emirates</li>
+       <li>Paris, France</li>
+       <li>Tokyo, Japan</li>
+       <li>Lima, Peru</li>
+      </ul>
+    </div>
+    <div id="Times">
+     <ul>
+      <li><h3>Hours Open</h3></li>
+      <li>9-5 Mon-Fri</li>
+      <li>9-7 Sat-Sun</li>
+    </ul>
+        </div>
+    <div id="contact">
+     <ul>
+         <li><h3>Contact Info</h3></li>
+         <li>Phone: 206-444-4444</li>
+         <li>Email: getsalmon@yahoo.salmon</li>
+     </ul>
+    </div>
+</footer>  
 </body>
 
 </html>
