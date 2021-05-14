@@ -69,8 +69,10 @@ Locations.prototype.getCookiesEachHour = function(){
    this.arrayCookie.push(` ${currentCount} cookies`);
    this.numCookie.push(currentCount);
 
+
    total += currentCount;
    console.log(total);
+
 
    
 }
@@ -94,7 +96,9 @@ function tableHeader(){
   const th1 = document.createElement('th');
   const tr = document.createElement('tr');
   table.appendChild(tr);
+
   th1.textContent = " "
+
   tr.appendChild(th1);
   for (let i = 0; i < hours.length; i++){
     const th = document.createElement("th");
@@ -123,6 +127,7 @@ function tableBody(locations){
 
 function tableFooter(){
   const footer = document.getElementById("table");
+
   const tr = document.createElement("tr");
   footer.appendChild(tr);
   const nameTd = document.createElement('td');
@@ -130,6 +135,7 @@ function tableFooter(){
   footer.appendChild(nameTd);
   let totalFooter = 0;
   for (let j=0; j < hours.length-1; j++ ){
+
 
     const createTd = document.createElement('td');
 
@@ -139,8 +145,8 @@ function tableFooter(){
 
      createTd.textContent = (totalFooter);
 
-     footer.appendChild(createTd);
-     totalFooter = 0;
+    footer.appendChild(createTd);
+    totalFooter = 0;
   }
 
   const totalTd = document.createElement('td')
