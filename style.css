@@ -1,15 +1,24 @@
 /* INDEX.HTML */
 body {
-  background-color: mediumslateblue;
+  /* background: linear-gradient( mediumslateblue,  rgb(96, 78, 201),  rgb(96, 80, 190)); */
+  background-color:  mediumslateblue;
 }
 main {
-  background-color: rgb(34, 28, 66);
+  background: linear-gradient(cadetblue, mediumturquoise);
   width: 996px;
   margin-left: 208px;
 }
 
+h1 {
+  position: absolute;
+}
+
 header {
   position: sticky;
+}
+
+header section img {
+  padding: 15px 0px 20px 20px;
 }
 
 header section {
@@ -106,19 +115,34 @@ table {
   margin-top: 5px;
   background-color: blanchedalmond;
   margin: 10px 100px 100px 100px;
+  /* width: 966px;
+  justify-content: space-evenly; */
 }
 
 table * {
   border: 2px solid black;
   padding: 2px;
   text-align: center;
+  
+  
 }
 
 form {
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
 }
 
 legend h3 {
   font-size: 1.3em;
+  margin: 10px 10px 10px 10px;
+  border: solid 2px black;
+  padding: 5px 5px 5px 5px;
+}
+
+form fieldset {
+  border: solid 3px black;
+  justify-content: space-evenly;
+  margin: 10px 10px 10px 208px;
+  padding: 10px 10px 10px 10px;
+  width: 966px;
 }

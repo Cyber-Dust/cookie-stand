@@ -3,7 +3,41 @@
 
 let hours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: ',"Daily Location Total: "];
 
- let objectNumber = 0;
+let objectNumber = 0;
+
+const allLocations = [];
+
+const formElem = document.getElementById('addSalmonForm');
+
+function handleSubmit(event) {
+  //Do this for every form
+  event.preventDefault();
+  let name = event.target.name.value;
+  let min = event.target.min.value;
+  let max = event.target.max.value;
+  let avg = event.target.avg.value;
+
+
+  let newLocations = new Locations(name, min, max, avg);
+  console.log(newLocations);
+  allLocations.push(newLocations);
+
+  newLocations.getCookiesEachHour();
+  renderAllLocations();
+  event.target.reset();
+
+}
+function renderAllLocations() {
+  const table = document.getElementById('table');
+  table.innerHTML = '';
+  tableHeader();
+  for (let i = 0; i < allLocations.length; i++) {
+    tableBody(allLocations[i]);
+  }
+  tableFooter();
+}
+
+
 
 // --------------------------- Constructor Functions ---------------------------//
 
@@ -15,6 +49,7 @@ function Locations(name, min, max, avg) {
   this.avg = avg;
   this.hours = hours;
   objectNumber++;
+  allLocations.push(this);
   }
 
 // --------------------------- Prototype Methods ---------------------------//
@@ -45,6 +80,8 @@ Locations.prototype.getCookiesEachHour = function(){
 
 return this.arrayCookie;
 }
+
+formElem.addEventListener('submit', handleSubmit);
 
 // --------------------------- Regular Functions ---------------------------//
 
@@ -97,7 +134,7 @@ function tableFooter(){
     const createTd = document.createElement('td');
 
     for(let k=0; k < objectNumber; k++){
-      totalFooter += objectsArray[k].numCookie[j];
+      totalFooter += allLocations[k].numCookie[j];
     }
 
      createTd.textContent = (totalFooter);
@@ -108,7 +145,7 @@ function tableFooter(){
 
   const totalTd = document.createElement('td')
   for(let k=0; k < objectNumber; k++){
-    totalFooter += objectsArray[k].numCookie[objectsArray[k].numCookie.length-1];
+    totalFooter += allLocations[k].numCookie[allLocations[k].numCookie.length-1];
   }
   totalTd.textContent = (totalFooter);
   footer.appendChild(totalTd);
@@ -117,6 +154,7 @@ function tableFooter(){
 
 
 // --------------------------- All Listeners ---------------------------//
+
 
 
 // --------------------------- Object Instances ---------------------------//
